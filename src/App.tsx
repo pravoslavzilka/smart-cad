@@ -25,14 +25,17 @@ function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const companies = [
-    { name: 'Autodesk', logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Trimble', logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Linear', logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Dell', logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'ESET', logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'HP', logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Bentley', logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' },
-    { name: 'Lenovo', logo: 'https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=200&h=100&fit=crop' }
+    { name: 'Autodesk', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/autodesk.png' },
+    { name: 'Trimble', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/trimble.png' },
+    { name: 'Linear', logo: 'https://new.smartcad.sk/wp-content/uploads/2025/02/linear.png' },
+    { name: 'Dell', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/dell.png' },
+    { name: 'ESET', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/eset.png' },
+    {name: 'GFI Software', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/gfi.png' },
+    { name: 'HP', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/hp.png' },
+    { name: 'Kerio', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/kerio.png' },
+    { name: 'ROWE', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/rowe.png' },
+    { name: 'SIGMA', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/sigma.png' },
+    { name: 'Lenovo', logo: 'https://new.smartcad.sk/wp-content/uploads/2023/12/lenovo.png' }
   ];
 
   const blogPosts = [
@@ -83,12 +86,11 @@ function App() {
       <header className="bg-slate-800 text-white py-4 px-6 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-teal-500 rounded-sm flex items-center justify-center">
-              <div className="w-5 h-5 bg-white rounded-sm opacity-80"></div>
-            </div>
-            <span className="text-xl font-bold">
-              smart<span className="text-teal-400">CAD</span>
-            </span>
+            <img 
+              src="https://new.smartcad.sk/wp-content/uploads/2023/10/smartcad-logo-v-krivkach_-biele-638x100.png" 
+              alt="smartCad Logo" 
+              className="h-10" />
+            
           </div>
           
           <nav className="hidden lg:flex space-x-8">
@@ -125,7 +127,7 @@ function App() {
           <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
             Zlepšite svoj CAD workflow s
             <br />
-            <span className="text-teal-400"><h4>expertným nástrojmi a podporou</h4></span>
+            <span className="text-teal-300 text-5xl">expertným nástrojmi a podporou</span>
           </h1>
           
           <p className="text-xl lg:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto">
@@ -283,70 +285,42 @@ function App() {
         </div>
       </section>
 
+
       {/* Cooperating Companies */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Spolupracujeme so silnými spoločnosťami</h2>
-            <p className="text-xl text-gray-600">
-              Naši dôveryhodní partneri a dodávatelia technológií
-            </p>
-          </div>
+    <section className="py-20 px-0 bg-gray-50">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-bold text-slate-800 mb-4">Spolupracujeme so silnými spoločnosťami</h2>
+        <p className="text-xl text-gray-600">
+          Naši dôveryhodní partneri a dodávatelia technológií
+        </p>
+      </div>
 
-          <div className="relative overflow-hidden">
-            <div className="flex items-center justify-between mb-8">
-              <button
-                onClick={prevSlide}
-                className="p-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-600" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="p-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-shadow"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-600" />
-              </button>
-            </div>
-
-            <div className="overflow-hidden">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {Array.from({ length: Math.ceil(companies.length / 4) }).map((_, slideIndex) => (
-                  <div key={slideIndex} className="w-full flex-shrink-0">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                      {companies.slice(slideIndex * 4, (slideIndex + 1) * 4).map((company, index) => (
-                        <div key={index} className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow flex items-center justify-center">
-                          <div className="text-center">
-                            <div className="w-24 h-12 bg-gray-200 rounded mb-2 mx-auto flex items-center justify-center">
-                              <span className="text-gray-600 font-semibold text-sm">{company.name}</span>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+      <div className="relative overflow-hidden w-full">
+        <div className="w-full">
+          <div
+            className="flex items-center gap-16 animate-company-scroll"
+            style={{ width: 'max-content' }}
+          >
+            {[...companies, ...companies].map((company, idx) => (
+              <div key={idx} className="flex items-center justify-center ">
+                <img src={company.logo} alt={company.name} className="h-32 w-auto object-contain" />
               </div>
-            </div>
-
-            {/* Dots indicator */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {Array.from({ length: Math.ceil(companies.length / 4) }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    currentSlide === index ? 'bg-teal-500' : 'bg-gray-300'
-                  }`}
-                />
-              ))}
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
+        </div>    
+      </div>
+      <style>
+        {`
+          @keyframes company-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-company-scroll {
+            animation: company-scroll 40s linear infinite;
+          }
+        `}
+      </style>
+    </section>
 
       {/* Customer Testimonials */}
       <section className="py-20 px-6 bg-white">
