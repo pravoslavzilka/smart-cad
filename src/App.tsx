@@ -11,6 +11,9 @@ import {
   Phone,
   Mail,
   ArrowRight,
+  Presentation,
+  Cog,
+  Workflow,
   Play,
   Users,
   Award,
@@ -103,9 +106,9 @@ function App() {
           </nav>
 
           <div className="flex items-center space-x-4">
-            <button className="text-sm hover:text-teal-400 transition-colors">SK | EN</button>
+            
             <button className="bg-teal-500 text-white px-4 py-2 rounded-lg hover:bg-teal-600 transition-colors">
-              Bezplatná konzultácia
+              E-shop
             </button>
           </div>
         </div>
@@ -114,24 +117,25 @@ function App() {
       {/* Hero Section */}
       <section className="relative h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center">
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div 
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: 'url("https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center'
-          }}
-        ></div>
+        {/* Replace image background with video */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          src="public/images/video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
         
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-6">
           <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            Zlepšite svoj CAD workflow s
+            Zlepšite svoj CAD workflow 
             <br />
-            <span className="text-teal-300 text-5xl">expertným nástrojmi a podporou</span>
+            <span className="text-teal-300 text-5xl">expertnými nástrojmi a podporou</span>
           </h1>
           
           <p className="text-xl lg:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto">
-            SmartCAD je váš dôveryhodný partner pre CAD softvér, hardvér a certifikované školenia na Slovensku a v zahraničí.
+            SmartCAD je váš dôveryhodný partner pre CAD softvér, hardvér a školenia na Slovensku a v zahraničí.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -139,13 +143,11 @@ function App() {
               Prehliadnuť CAD riešenia
               <ArrowRight className="ml-2 w-5 h-5" />
             </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-slate-900 transition-colors text-lg font-semibold">
-              Požiadať o bezplatnú konzultáciu
-            </button>
+            
           </div>
           
           <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ChevronDown className="w-12 h-12 text-white" />
+            <ChevronDown className="w-12 h-12 text-white" style={{ marginTop: "40px", marginBottom: "-30px"}} />
           </div>
         </div>
       </section>
@@ -154,9 +156,9 @@ function App() {
       <section id="riesenia" className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Čo ponúkame</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Zabezpečujeme</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Kompletné CAD riešenia od licencovania softvéru až po nastavenie hardvéru a profesionálne školenia
+              Kompletné CAD riešenia od licencovania softvéru až po nastavenie hardvéru a poskytovanie servisných služieb.
             </p>
           </div>
 
@@ -196,10 +198,52 @@ function App() {
                 Certifikované kurzy a prispôsobené školiace programy pre jednotlivcov a tímy.
               </p>
               <button className="text-teal-600 font-semibold hover:text-teal-700 transition-colors flex items-center mx-auto">
+                Prihlásiť sa <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8" style={{ marginTop: '5rem' }}>
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow group">
+              <div className="w-20 h-20 bg-teal-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-500 transition-colors">
+                <Workflow className="w-10 h-10 text-teal-600 group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Technické a IT služby</h3>
+              <p className="text-gray-600 mb-6">
+                Opravy plotrov, inštalácie sw, správa siete.
+              </p>
+              <button className="text-teal-600 font-semibold hover:text-teal-700 transition-colors flex items-center mx-auto">
+                Zistiť viac <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow group">
+              <div className="w-20 h-20 bg-teal-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-500 transition-colors">
+                <Presentation className="w-10 h-10 text-teal-600 group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Projekčná činnosť</h3>
+              <p className="text-gray-600 mb-6">
+                Železobetónové konštrukcie, TZB v Revite
+              </p>
+              <button className="text-teal-600 font-semibold hover:text-teal-700 transition-colors flex items-center mx-auto">
+                Zistiť viac <ArrowRight className="ml-2 w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow group">
+              <div className="w-20 h-20 bg-teal-100 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-teal-500 transition-colors">
+                <Cog className="w-10 h-10 text-teal-600 group-hover:text-white transition-colors" />
+              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-4">Konštrukčná činnosť</h3>
+              <p className="text-gray-600 mb-6">
+                Potrubia, oceľové konštrukcie, pevnostné výpočty.
+              </p>
+              <button className="text-teal-600 font-semibold hover:text-teal-700 transition-colors flex items-center mx-auto">
                 Zistiť viac <ArrowRight className="ml-2 w-4 h-4" />
               </button>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -207,9 +251,9 @@ function App() {
       <section className="py-20 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Prečo si vybrať SmartCAD?</h2>
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">Projektujeme a poskytujeme servisné služby</h2>
             <p className="text-xl text-gray-600">
-              Váš dôveryhodný partner s preukázanými skúsenosťami a komplexnou podporou
+              Využite naše viac ako 20-ročné skúsenosti vo svoj prospech.
             </p>
           </div>
 
@@ -270,7 +314,7 @@ function App() {
               <div className="text-gray-600">Vyškolených profesionálov</div>
             </div>
             <div className="bg-teal-50 rounded-xl p-6">
-              <div className="text-3xl font-bold text-teal-600 mb-2">200+</div>
+              <div className="text-3xl font-bold text-teal-600 mb-2">3000+</div>
               <div className="text-gray-600">Vybavených firiem</div>
             </div>
             <div className="bg-teal-50 rounded-xl p-6">
