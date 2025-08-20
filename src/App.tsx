@@ -120,7 +120,7 @@ function App() {
         {/* Replace image background with video */}
         <video
           className="absolute inset-0 w-full h-full object-cover opacity-30"
-          src="public/images/video.mp4"
+          src="/images/video.mp4"
           autoPlay
           loop
           muted
